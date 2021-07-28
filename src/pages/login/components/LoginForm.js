@@ -1,38 +1,31 @@
 import React from "react";
+import useForm from "../../../hooks/useForm";
+import Button from "../../../components/button/Button";
+import Input from "../../../components/input/Input";
+
+import { UserContext } from "../../../context/UserContext";
 
 const LoginForm = () => {
-  const [username, setUsername] = React.useState("");
-  const [password, setPassword] = React.useState("");
+  const username = useForm();
+  const password = useForm();
+
+  const { userLogin } = React.useContext(UserContext);
 
   function handleSubmit(event) {
     event.preventDefault();
 
-    fetch("https://dogsapi.origamid.dev/json/jwt-auth/v1/token", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username, password }),
-    })
-      .then((res) => res.json())
-      .then((json) => console.log(json));
+    if (!username.validate() || !password.validate()) return;
+
+    userLogin(username.value, password.value);
   }
 
   return (
     <section>
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={username}
-          onChange={({ target }) => setUsername(target.value)}
-        />
-        <input
-          type="password"
-          value={password}
-          onChange={({ target }) => setPassword(target.value)}
-        />
-        <button>Entrar</button>
+        <Input {...username} label="Usuário" type="text" name="username" />
+        <Input {...password} label="Senha" type="password" name="password" />
+        <Button>Entrar</Button>
       </form>
     </section>
   );
