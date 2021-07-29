@@ -1,5 +1,6 @@
-import React from "react";
-import { Route, Switch, useRouteMatch } from "react-router-dom";
+import React, { useContext } from "react";
+import { Route, Switch, useHistory, useRouteMatch } from "react-router-dom";
+import { UserContext } from "../../context/UserContext";
 import LoginCreate from "./components/LoginCreate";
 import LoginForm from "./components/LoginForm";
 import LoginPasswordLost from "./components/LoginPasswordLost";
@@ -7,6 +8,12 @@ import LoginPasswordReset from "./components/LoginPasswordReset";
 
 const Login = () => {
   const { path, url } = useRouteMatch();
+  const { isAuthenticated } = useContext(UserContext);
+  const history = useHistory();
+
+  React.useEffect(() => {
+    if (isAuthenticated) history.push("/conta");
+  }, [isAuthenticated, history]);
 
   return (
     <div>
