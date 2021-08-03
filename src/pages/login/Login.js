@@ -5,6 +5,7 @@ import LoginCreate from "./components/LoginCreate";
 import LoginForm from "./components/LoginForm";
 import LoginPasswordLost from "./components/LoginPasswordLost";
 import LoginPasswordReset from "./components/LoginPasswordReset";
+import styles from "./Login.module.css";
 
 const Login = () => {
   const { path, url } = useRouteMatch();
@@ -16,22 +17,24 @@ const Login = () => {
   }, [isAuthenticated, history]);
 
   return (
-    <div>
-      <Switch>
-        <Route exact path={path}>
-          <LoginForm />
-        </Route>
-        <Route path={`${url}/criar`}>
-          <LoginCreate />
-        </Route>
-        <Route path={`${url}/perdeu`}>
-          <LoginPasswordLost />
-        </Route>
-        <Route path={`${url}/resetar`}>
-          <LoginPasswordReset />
-        </Route>
-      </Switch>
-    </div>
+    <section className={styles.login}>
+      <div className={styles.forms}>
+        <Switch>
+          <Route exact path={path}>
+            <LoginForm />
+          </Route>
+          <Route path={`${url}/criar`}>
+            <LoginCreate />
+          </Route>
+          <Route path={`${url}/perdeu`}>
+            <LoginPasswordLost />
+          </Route>
+          <Route path={`${url}/resetar`}>
+            <LoginPasswordReset />
+          </Route>
+        </Switch>
+      </div>
+    </section>
   );
 };
 
