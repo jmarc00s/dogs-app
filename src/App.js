@@ -7,6 +7,8 @@ import { UserStorage } from "./context/UserContext";
 
 import Home from "./pages/Home";
 import Login from "./pages/login/Login";
+import User from "./pages/user/User";
+import ProtectedRoute from "./components/helpers/ProtectedRoute";
 
 const App = () => {
   return (
@@ -21,6 +23,9 @@ const App = () => {
             <Route path="/login">
               <Login />
             </Route>
+            <ProtectedRoute path="/conta">
+              <User />
+            </ProtectedRoute>
           </Switch>
           <Footer />
         </UserStorage>
