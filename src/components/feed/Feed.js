@@ -7,7 +7,12 @@ const Feed = () => {
 
   return (
     <div>
-      {modalPhoto && <FeedModal photo={modalPhoto} />}
+      {modalPhoto && (
+        <FeedModal
+          photo={modalPhoto}
+          clickOutside={() => setModalPhoto(null)}
+        />
+      )}
       <FeedPhotos setModalPhoto={setModalPhoto} />
     </div>
   );
