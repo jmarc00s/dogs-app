@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import PhotoComments from "./PhotoComments";
+import PhotoComments from "./photoComments/PhotoComments";
 
 import styles from "./PhotoContent.module.css";
 
