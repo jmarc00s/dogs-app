@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "../../../../helpers/Image";
 
 import styles from "./FeedPhotosItem.module.css";
 
@@ -8,7 +9,7 @@ const FeedPhotosItem = ({ photo, setModalPhoto }) => {
   }
   return (
     <li className={styles.photo} onClick={handleClick}>
-      <img src={photo.src} alt={photo.title}></img>
+      <Image src={photo.src} alt={photo.title} />
       <span className={styles.access}>{photo.acessos}</span>
     </li>
   );
