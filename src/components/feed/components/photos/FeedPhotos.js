@@ -22,7 +22,7 @@ const FeedPhotos = ({ setModalPhoto, user, page, setCanLoad }) => {
     }
 
     fetchPhotos();
-  }, [request, user, page]);
+  }, [request, user, page, setCanLoad]);
 
   if (error) return <Error error={error} />;
   if (loading) return <Loading />;

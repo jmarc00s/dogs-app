@@ -51,7 +51,6 @@ const Feed = ({ user }) => {
           setCanLoad={setCanLoad}
         />
       ))}
-      {!canLoad && <p>Não existem mais fotos a serem carregadas</p>}
     </div>
   );
 };

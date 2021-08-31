@@ -10,6 +10,7 @@ import Login from "./pages/login/Login";
 import User from "./pages/user/User";
 import ProtectedRoute from "./components/helpers/ProtectedRoute";
 import Photo from "./components/Photo/Photo";
+import UserProfile from "./pages/user/components/UserProfile";
 
 const App = () => {
   return (
@@ -29,6 +30,9 @@ const App = () => {
             </ProtectedRoute>
             <Route path="/foto/:id">
               <Photo />
+            </Route>
+            <Route path="/perfil/:user">
+              <UserProfile />
             </Route>
           </Switch>
           <Footer />
