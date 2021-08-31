@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 
 import Feed from "../../components/feed/Feed";
 import { UserContext } from "../../context/UserContext";
+import NotFound from "../NotFound";
 import UserHeader from "./components/UserHeader";
 import UserPhotoPost from "./components/UserPhotoPost";
 import UserStats from "./components/UserStats";
@@ -22,6 +23,9 @@ const User = () => {
         </Route>
         <Route path="/conta/estatisticas">
           <UserStats />
+        </Route>
+        <Route path="*">
+          <NotFound />
         </Route>
       </Switch>
     </section>

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Route, Switch, useHistory, useRouteMatch } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
+import NotFound from "../NotFound";
 import LoginCreate from "./components/LoginCreate";
 import LoginForm from "./components/LoginForm";
 import LoginPasswordLost from "./components/LoginPasswordLost";
@@ -31,6 +32,9 @@ const Login = () => {
           </Route>
           <Route path={`${url}/resetar`}>
             <LoginPasswordReset />
+          </Route>
+          <Route path="*">
+            <NotFound />
           </Route>
         </Switch>
       </div>
