@@ -13,10 +13,10 @@ const FeedPhotos = ({ setModalPhoto, user, page, setCanLoad }) => {
 
   React.useEffect(() => {
     async function fetchPhotos() {
-      const { url, options } = PHOTOS_GET({ page, total: 3, user });
+      const { url, options } = PHOTOS_GET({ page, total: 6, user });
       const { response, json } = await request(url, options);
 
-      if (response && response.ok && json.length < 3) {
+      if (response && response.ok && json.length < 6) {
         setCanLoad(false);
       }
     }
