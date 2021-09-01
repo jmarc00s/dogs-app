@@ -15,30 +15,32 @@ import NotFound from "./pages/NotFound";
 
 const App = () => {
   return (
-    <div>
+    <div className="app">
       <BrowserRouter>
         <UserStorage>
           <Header />
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/login">
-              <Login />
-            </Route>
-            <ProtectedRoute path="/conta">
-              <User />
-            </ProtectedRoute>
-            <Route path="/foto/:id">
-              <Photo />
-            </Route>
-            <Route path="/perfil/:user">
-              <UserProfile />
-            </Route>
-            <Route path="*">
-              <NotFound />
-            </Route>
-          </Switch>
+          <main className="app-body">
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path="/login">
+                <Login />
+              </Route>
+              <ProtectedRoute path="/conta">
+                <User />
+              </ProtectedRoute>
+              <Route path="/foto/:id">
+                <Photo />
+              </Route>
+              <Route path="/perfil/:user">
+                <UserProfile />
+              </Route>
+              <Route path="*">
+                <NotFound />
+              </Route>
+            </Switch>
+          </main>
           <Footer />
         </UserStorage>
       </BrowserRouter>

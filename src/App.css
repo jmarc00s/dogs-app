@@ -82,3 +82,13 @@ a {
   border-radius: 0.2rem;
   z-index: -1;
 }
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh + 10rem);
+}
+
+.app-body {
+  flex: 1;
+}
