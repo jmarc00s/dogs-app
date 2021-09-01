@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 
 import Feed from "../../components/feed/Feed";
+import Head from "../../components/helpers/Head";
 import { UserContext } from "../../context/UserContext";
 import NotFound from "../NotFound";
 import UserHeader from "./components/UserHeader";
@@ -13,6 +14,7 @@ const User = () => {
 
   return (
     <section className="container">
+      <Head title="Minha conta" />
       <UserHeader />
       <Switch>
         <Route exact path="/conta">

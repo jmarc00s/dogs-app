@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Route, Switch, useHistory, useRouteMatch } from "react-router-dom";
+import Head from "../../components/helpers/Head";
 import { UserContext } from "../../context/UserContext";
 import NotFound from "../NotFound";
 import LoginCreate from "./components/LoginCreate";
@@ -19,6 +20,7 @@ const Login = () => {
 
   return (
     <section className={styles.login}>
+      <Head title="Login" />
       <div className={styles.forms}>
         <Switch>
           <Route exact path={path}>

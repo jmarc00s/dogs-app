@@ -9,6 +9,7 @@ import Error from "../../../components/helpers/Error";
 
 import styles from "./UserPhotoPost.module.css";
 import { useHistory } from "react-router";
+import Head from "../../../components/helpers/Head";
 
 const UserPhotoPost = () => {
   const history = useHistory();
@@ -50,6 +51,7 @@ const UserPhotoPost = () => {
 
   return (
     <section className={`${styles.photoPost} animeLeft`}>
+      <Head title="Poste sua foto" />
       <form onSubmit={handleSubmit}>
         <Input label="Nome" type="text" name="nome" {...nome} />
         <Input label="Peso" type="number" name="peso" {...peso} />
