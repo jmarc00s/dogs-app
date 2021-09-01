@@ -28,7 +28,7 @@ const LoginPasswordLost = () => {
   if (error) return <Error error={error} />;
   else
     return (
-      <section>
+      <section className="animeLeft">
         <Head title="Perdeu a senha" />
         <h1 className="title">Perdeu a senha?</h1>
         {data ? (
